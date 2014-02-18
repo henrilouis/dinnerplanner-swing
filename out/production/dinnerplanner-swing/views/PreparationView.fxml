@@ -1,27 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.preparationController">
+<fx:root maxWidth="600.0" minHeight="343.0" minWidth="428.0" prefHeight="388.0" prefWidth="468.0" styleClass="root" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 
-    <top>
-
-    </top>
-
-    <center>
-
-    </center>
-
     <right>
 
     </right>
 
-</BorderPane>
+    <center>
+        <VBox fx:id="preparationMenuBox" alignment="CENTER" prefWidth="0.0" BorderPane.alignment="CENTER" />
+    </center>
+
+    <top>
+        <VBox prefHeight="62.0" prefWidth="468.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="17.0" prefWidth="470.0" text="Dinner menu preparation" textAlignment="CENTER">
+                    <font>
+                        <Font name="Georgia Italic" size="36.0" />
+                    </font>
+                <VBox.margin>
+                    <Insets left="10.0" top="10.0" />
+                </VBox.margin>
+                </Label>
+
+            </children>
+        </VBox>
+
+    </top>
+    <center>
+        <VBox prefHeight="300.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+        <VBox fx:id="preparationMenuBox" prefHeight="300.0" prefWidth="550.0">
+            <VBox.margin>
+                <Insets left="10.0" top="10.0" />
+            </VBox.margin>
+        </VBox>
+        </VBox>
+
+    </center>
+
+</fx:root>

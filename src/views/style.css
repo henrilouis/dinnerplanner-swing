@@ -11,13 +11,14 @@ root
 .button
 {
     -fx-margin: 10;
-    -fx-background-radius: 3,2,1;
+    -fx-border-radius:0;
 }
 
 .recipe
 {
     -fx-padding:5;
     -fx-background-color:#ffffff;
+    -fx-fill: yellow;
 }
 
 .menuBox

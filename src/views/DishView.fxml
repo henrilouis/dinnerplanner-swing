@@ -1,27 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.dishController">
+<fx:root maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="root" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 
     <top>
+            <VBox minHeight="150.0" prefHeight="150.0" prefWidth="231.0" BorderPane.alignment="TOP_LEFT">
+                <children>
+                    <HBox prefHeight="140.0" prefWidth="140.0">
+                        <children>
+                            <VBox fx:id="dishImageBox" prefHeight="140.0" prefWidth="140.0">
+                                <VBox.margin>
+                                    <Insets top="10.0" />
+                                </VBox.margin>
+                                <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                </HBox.margin>
 
+                            </VBox><VBox prefHeight="140.0" prefWidth="258.0">
+                                <children>
+                                    <Label fx:id="dishName">
+                                        <font>
+                                            <Font name="Georgia Italic" size="27.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="dishPrice">
+                                        <font>
+                                            <Font name="Georgia Italic" size="12.0" />
+                                        </font>
+                                    <VBox.margin>
+                                    <Insets top="10.0" />
+                                    </VBox.margin>
+                                    </Label>
+                                </children>
+                                <HBox.margin>
+                                <Insets top="16.0" />
+                                </HBox.margin>
+                             </VBox>
+
+                        </children>
+
+                        <HBox.margin>
+                            <Insets left="9.0" top="13.0" />
+                        </HBox.margin>
+                    </HBox>
+                </children>
+            </VBox>
     </top>
 
-    <center>
+<bottom>
 
-    </center>
 
-    <right>
+</bottom>
+<left>
+        <HBox minWidth="-Infinity" prefHeight="218.0" prefWidth="316.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text fx:id="dishDescription">
+                    <font>
+                        <Font name="Georgia" size="12.0" />
+                    </font>
+                </Text>
+            </children>
+<BorderPane.margin>
+<Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+</BorderPane.margin>
+        </HBox>
 
-    </right>
 
-</BorderPane>
+
+</left>
+<right>
+    <TableView fx:id="itemTbl" maxHeight="-Infinity" prefHeight="228.0" prefWidth="250.0" BorderPane.alignment="BOTTOM_RIGHT">
+        <columns>
+            <TableColumn fx:id="dishIngredient" maxWidth="200.0" minWidth="100.0" prefWidth="100.0" text="Ingredient" />
+            <TableColumn fx:id="ingredientQuantity" maxWidth="200.0" minWidth="50.0" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="ingredientCost" maxWidth="200.0" minWidth="50.0" prefWidth="75.0" text="Cost" />
+        </columns>
+    </TableView>
+</right>
+
+
+</fx:root>

@@ -1,9 +1,13 @@
 package model;
 
+import javafx.beans.InvalidationListener;
+
+import java.util.Observable;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class DinnerModel implements IDinnerModel
+public class DinnerModel extends Observable implements IDinnerModel
 {
     int nrGuests;
     Set<Dish> dishes = new HashSet<Dish>();
@@ -19,7 +23,6 @@ public class DinnerModel implements IDinnerModel
      * The constructor of the overall model. Set the default values here
      */
     public DinnerModel(){
-
         //Adding some example data, you can add more
         Dish dish1 = new Dish("French toast",Dish.STARTER,"toast.jpg","In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
         Ingredient dish1ing1 = new Ingredient("eggs",0.5,"",1);
@@ -69,6 +72,17 @@ public class DinnerModel implements IDinnerModel
         dish3.addIngredient(dish3ing3);
 
         dishes.add(dish3);
+
+        Dish dish4 = new Dish("Ice cream",Dish.DESERT,"icecream.jpg","Place the banana and mango in a sealed container and freeze for 2–3 hours or until frozen. Place the frozen fruit and yogurt in a blender or food processor and blend until smooth. Serve immediately or place in a sealed container and freeze. After freezing allow to soften for 5 minutes before serving.");
+        Ingredient dish4ing1 = new Ingredient("Peeled & chopped bananas",2,"",2);
+        Ingredient dish4ing2 = new Ingredient("Peeled & chopped mangos",3,"",8);
+        Ingredient dish4ing3 = new Ingredient("Thick or vanilla yogurt",280,"g",12);
+
+        dish4.addIngredient(dish4ing1);
+        dish4.addIngredient(dish4ing2);
+        dish4.addIngredient(dish4ing3);
+
+        dishes.add(dish4);
 
         nrGuests = 1;
     }
@@ -120,6 +134,8 @@ public class DinnerModel implements IDinnerModel
                 if(!selecteddishes.contains(d))
                 {
                     selecteddishes.add(d);
+                    this.setChanged();
+                    this.notifyObservers("dishes");
                 }
             }
         }
@@ -133,19 +149,23 @@ public class DinnerModel implements IDinnerModel
                 if(selecteddishes.contains(d))
                 {
                     selecteddishes.remove(d);
+                    this.setChanged();
+                    this.notifyObservers("dishes");
                 }
             }
         }
     }
 
     @Override
-    public int getNumberOfGuests(int numberOfGuests) {
+    public int getNumberOfGuests() {
         return nrGuests;
     }
 
     @Override
     public void setNumberOfGuests(int numberOfGuests) {
         nrGuests = numberOfGuests;
+        this.setChanged();
+        this.notifyObservers("guests");
     }
 
     @Override
@@ -184,4 +204,5 @@ public class DinnerModel implements IDinnerModel
         price = price * nrGuests;
         return (float) price;
     }
+
 }

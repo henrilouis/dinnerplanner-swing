@@ -25,3 +25,5 @@ proguard/
 *.ipr
 *.iws
 .idea/
+src/views/DishView.fxml
+out/production/dinnerplanner-swing/views/IngredientsView.fxml

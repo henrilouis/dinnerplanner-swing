@@ -4,7 +4,7 @@ import java.util.Set;
 
 public interface IDinnerModel
 {
-    public int getNumberOfGuests(int numberOfGuests);
+    public int getNumberOfGuests();
     public void setNumberOfGuests(int numberOfGuests);
     /**
      * Returns the dish that is on the menu for selected type (1 = starter, 2 = main, 3 = desert).
