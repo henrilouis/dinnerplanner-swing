@@ -7,11 +7,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<<<<<<< HEAD
-<BorderPane maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.dishController">
-=======
+
 <fx:root maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="root" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
->>>>>>> origin/wop
 
     <stylesheets>
         <URL value="@style.css" />
@@ -28,17 +25,6 @@
         </Label>
     </top>
 
-<<<<<<< HEAD
-    <center>
-
-    </center>
-
-    <right>
-
-    </right>
-
-</BorderPane>
-=======
 <center>
     <TableView fx:id="itemTbl" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
@@ -53,4 +39,3 @@
 </bottom>
 
 </fx:root>
->>>>>>> origin/wop

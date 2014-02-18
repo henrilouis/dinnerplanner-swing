@@ -98,6 +98,7 @@ public class ingredientsController implements Observer
     @FXML
     private void fillTable()
     {
+        data.clear();
         for(Ingredient i: dM.getAllIngredients())
         {
             Item item = new Item();
